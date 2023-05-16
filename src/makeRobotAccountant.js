@@ -13,7 +13,29 @@ function makeRobotAccountant() {
     return num1 + num2;
   };
 
-  return sum;
+  const resetCount = () => {
+    count = 0;
+  };
+
+  return {
+    sum,
+    resetCount,
+  };
 }
+
+const getSum = makeRobotAccountant();
+
+console.log(getSum.sum(2)(2));
+console.log(getSum.sum(2)(2));
+getSum.resetCount();
+console.log(getSum.sum(2)(2));
+console.log(getSum.sum(2)(2));
+
+// console.log(getSum(2)(5));
+// console.log(getSum(2)(5));
+// console.log(getSum(2)(5));
+// console.log(getSum(2)(5));
+// console.log(getSum(2)(5));
+
 
 module.exports = makeRobotAccountant;
